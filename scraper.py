@@ -38,6 +38,22 @@ def scrape(topic):
             options[i] = '\n- ' + options[i]
             raw_paragraph += options[i]
 
-    print(raw_paragraph)
+    elif raw_paragraph[-17:-1] == 'often refers to:':
+        options = page_soup.find_all("ul")[0]
+        options = options.find_all('li')
+
+        for i in range(len(options)):
+            options[i] = options[i].get_text()
+            options[i] = '\n- ' + options[i]
+            raw_paragraph += options[i]
+
+    elif raw_paragraph[-14:-1] == 'may refer to:':
+        options = page_soup.find_all("h2", {'class': ''})
+        options = options[1:-2]
+
+        for i in range(len(options)):
+            options[i] = options[i].get_text()
+            options[i] = '\n- ' + options[i][:-6]
+            raw_paragraph += options[i]
 
     return raw_paragraph, wiki_URL

@@ -42,7 +42,7 @@ class Handler:
                 output = 'Good morning!\n:warning: There was a security break at Facebook.\nWould you like to know what personal data is at risk?'
 
             elif query == "sure":
-                output = 'Facebook knows the following about you:\n1. Full name\n2. Email\n3. Birthday\n4. Location\n5. Friends list'
+                output = 'Facebook knows the following about you:\n1. Full name\n2. Email\n3. Birthday\n4. Location\n5. Friends list\n\nWould you like to know how this may affect you?'
 
             elif query == "yep":
                 output = ':speech_balloon:'
@@ -74,8 +74,10 @@ listen_options = {
     "filter_channels": None,
 }
 
+key_file = open("paperkey.txt", "r+")
+
 bot = Bot(
-    username="botnow", paperkey="deer apology urban celery fatigue black net report neck bulk return lounge gallery", handler=Handler()
+    username="botnow", paperkey=key_file.read(), handler=Handler()
 )
 
 asyncio.run(bot.start(listen_options))

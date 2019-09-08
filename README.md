@@ -1,4 +1,4 @@
-This submissions was made as a part of 
+This submissions was made as a part of [Citizen Hacks](https://citizenhacks.devpost.com)
 
 ### Inspiration
 People have to go out of their way to take control of their privacy. Sometimes, they need to go through complicated settings and unparsed data to become of your data and how it is being used. This could be solved by creating a simple privacy assistant that can hold a natural conversation and do a variety of tasks.
